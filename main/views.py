@@ -1,4 +1,8 @@
 from django.shortcuts import render
+from django.shortcuts import render
+from .models import Gallery
+from .models import Listing
+from django.http import HttpResponse
 
 
 def index(request):
@@ -22,7 +26,8 @@ def outside(request):
 
 
 def gallery(request):
-    return render(request, 'main/gallery.html')
+    gal_img = Gallery.objects.all()
+    return render(request, 'main/gallery.html', context={'gal_img': gal_img})
 
 
 def day(request):
@@ -34,10 +39,13 @@ def night(request):
 
 
 def listings(request):
-    return render(request, 'main/listings.html')
+    listing_object = Listing.objects.all()
+    return render(request, 'main/listings.html', context={'listing_object': listing_object})
 
 
 def contact(request):
     return render(request, 'main/contact.html')
+
+
 
 
