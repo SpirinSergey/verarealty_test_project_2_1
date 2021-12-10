@@ -1,0 +1,84 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+
+
+{% block title %}{{ title }}{% endblock %}
+
+
+{% block content %}
+<div class="page-content">
+    <div class="container">
+        <h2 class="display-4 mb-5">Inside amenities</h2>
+    </div>
+    <div class="row align-items-center mx-0" style="background-color: #f1f6ff;">
+        <div class="col-lg-4 py-5">
+            <div class="container">
+                <h2 class="mb-3">PEACOCK ALLEY</h2>
+                <p class="fs-5">
+                    No doubt that Peacock Alley with  an unusual and  magnificent  Pendulum Clock, a tradition for every Waldorf Astoria property,  is the site of countless rendez-vous.
+                </p>
+                <p class="fs-5 mb-0">
+                    You will be inspiring by the views of the incredible beauty of the ocean and the endless horizons of Miami from branded interior halls, luxuriously furnished  terraces of Peacock Alley.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-8 px-0">
+            <img src="{% static 'main/img/1.jpg' %}" class="inside-img-1" alt="">
+        </div>
+    </div>
+
+    <section class="py-60">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
+                    <h2>SOAK IN THE AURA</h2>
+                    <hr>
+                    <p class="fs-5">
+                        Experience the real bliss by sitting in the  elegant private bar and tasting drinks and cocktails.
+                    </p>
+                    <p class="fs-5">
+                        This asymmetrical location is united by a common architectural design, where you can feel the real energy  flow of  surrounding nature  and  beauty of created space.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="row mx-0">
+            <div class="col-lg-6 my-2">
+                <img src="{% static 'main/img/2.jpg' %}" class="inside-img-2" alt="">
+            </div>
+            <div class="col-lg-6 my-2">
+                <img src="{% static 'main/img/img_5.jpg' %}" class="inside-img-2" alt="">
+            </div>
+        </div>
+    </section>
+
+    <section class="section-block-moments py-60">
+        <div class="row align-items-center mx-0">
+            <div class="col-lg-6 mb-4">
+                <div class="container text-center">
+                    <h2 class="fs-1 mb-4">EXCLUSIVE HOTEL BENEFITS</h2>
+                    <p class="subtext">
+                        The residents of Waldord Astoria Miami's appartments will have special offerings of  world renowned food and beverages, and more over -  the access and preffered rates to exclusive hotel benefits including visiting  branded restaurants and a bar with a tasting room,a fitness center with private training studios, spa, a swimming pool with whirlpools and lounging areas, kids club, conference rooms and other hotel centers and necessary services, for example,  house account signing privileges, 24-hour  valet service and other useful amenities.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6 px-0">
+                <img src="{% static 'main/img/amenities-3-1.jpg' %}" class="img-moments" alt="">
+            </div>
+        </div>
+    </section>
+
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-6">
+                    Waldorf Astoria Miami is no exception in its reverent attitude to the amazing history of Peacock Alley, preserving this place as a stylish and impressive restaurant brand where extravagant breakfasts are served and a  certain culture of famous author's cocktails is observed.
+                </h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

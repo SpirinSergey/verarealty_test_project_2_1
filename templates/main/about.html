@@ -1,0 +1,64 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+
+
+{% block title %}{{ about }}{% endblock %}
+
+
+{% block content %}
+<div class="page-content">
+    <div class="container mb-5">
+        <h2 class="display-4 mb-5">About us</h2>
+        <div class="row">
+            <div class="col-lg-7 mb-4">
+                <h2>Our history</h2>
+                <hr>
+                <p>
+                    What do you know about Waldorf Astoria which legendary history, as a flagship brand offering the
+                    highest standards of facilities and service on hotels, begins in New York in 1931?
+                </p>
+                <p>
+                    Waldorf Astoria is known as an icon of glamour, the chain of prestigious five-star luxury hotels
+                    located in landmark destinations around the Globe.
+                </p>
+                <p>
+                    Nowadays Waldorf Astoria Miami is not ontly the part of established hotel prestigious industry, but
+                    is a symbol of elegance in transfornation and new vision for the residence wanted to come.
+                </p>
+            </div>
+            <div class="col-lg-5">
+                <div class="row about-features pt-5">
+                    <div class="col-sm-12 feature mb-3">
+                        <h1>205</h1>
+                        <p>Hotel Guestrooms and Suites</p>
+                    </div>
+                    <div class="col-sm-6 feature mb-3">
+                        <h1>360</h1>
+                        <p>Branded Luxury Residences</p>
+                    </div>
+                    <div class="col-sm-6 feature mb-3">
+                        <h1>100</h1>
+                        <p>Story Tower</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center mx-0">
+        <div class="col-lg-6 mb-4">
+            <div class="container text-center">
+                <h2 class="display-4">90 Years of Perfection</h2>
+                <p class="mb-0">
+                    Amazing experiences at one the world's legendary hotels. Each Waldord Astoria is a unique ambitious
+                    composition with global recognition and significance.
+                </p>
+            </div>
+        </div>
+        <div class="col-lg-6 px-0">
+            <img src="{% static 'main/img/about-old-1.jpg' %}" width="100%" style="height: 100vh;" alt="pic">
+        </div>
+    </div>
+</div>
+
+{% endblock %}

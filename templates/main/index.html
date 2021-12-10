@@ -1,0 +1,110 @@
+{% extends 'main/layout.html' %}
+{% load static %}
+
+
+
+{% block title %}{{ title }}{% endblock %}
+
+
+{% block content %}
+
+    <section class="section-hero">
+        <div class="row w-100 align-items-center mx-0">
+            <div class="col-lg-6 info">
+                <div class="container text-center">
+                    <h3 class="display-4 text-uppercase mb-3">Welcome to <br>Waldorf Astoria</h3>
+                    <p class="about-text text-uppercase">
+                        A new era begins
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg px-0">
+                <img src="{% static 'main/img/main-hero.jpg' %}"/>
+            </div>
+        </div>
+    </section>
+
+        <section class="section-about">
+        <div class="row align-items-center mx-0">
+            <div class="col-lg-6 mb-4 px-0">
+                <img src="{% static 'main/img/about-1.jpg' %}" class="about-img-1" alt="">
+            </div>
+            <div class="col-lg-6 px-4">
+                <div class="container text-center">
+                    <h2 class="display-3">About Us</h2>
+                    <p>The history of our exciting residence</p>
+                    <a href="{% url 'about' %}" class="btn btn-outline-dark btn-lg rounded-0">Learn more</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-facilities section-py">
+        <div class="container text-center mb-4">
+            <h2 class="display-3">Amenities</h2>
+            <p class="mb-0">We have prepared all possible amenities for your pleasure.</p>
+        </div>
+
+        <div class="row mx-0 mb-4">
+            <div class="col-lg-3 px-0">
+                <img src="{% static 'main/img/1.jpg' %}" alt="pic1">
+            </div>
+            <div class="col-lg-3 px-0">
+                <img src="{% static 'main/img/2.jpg' %}" alt="pic2">
+            </div>
+            <div class="col-lg-3 px-0">
+                <img src="{% static 'main/img/img-1.jpg' %}" alt="pic3">
+            </div>
+            <div class="col-lg-3 px-0">
+                <img src="{% static 'main/img/img-2.jpg' %}" alt="pic4">
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="{% url 'inside' %}" class="btn btn-dark btn-lg rounded-0 mx-1 my-1">Viewing inside</a>
+            <a href="{% url 'outside' %}" class="btn btn-outline-dark btn-lg rounded-0 mx-1 my-1">Viewing outside</a>
+        </div>
+    </section>
+
+    <section class="section-main360views">
+        <div class="container text-center">
+            <h2 class="display-3 mb-0">360 Views</h2>
+            <p class="mb-4">See us in panoramic view</p>
+
+            <div class="row">
+                <div class="col-lg-6 mb-4">
+                    <div class="view-img-1" style="background-image: url({% static 'main/img/day.jpg' %});">
+                        <div class="view-overlay">
+                            <div class="view-link">
+                                <a href="{% url 'day' %}"><i class="bi bi-search"></i> DAY</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="view-img-2" style="background-image: url({% static 'main/img/day.jpg' %});">
+                        <div class="view-link">
+                            <a href="{% url 'night' %}"><i class="bi bi-search"></i> NIGHT</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <section class="section-py">
+        <div class="row align-items-center mx-0">
+            <div class="col-lg-6 mb-4 text-center">
+                <div class="container">
+                    <h2 class="display-3 mb-2">Available units</h2>
+                    <p class="mb-4">Check out our available listings</p>
+                    <a href="{% url 'listings' %}" class="btn btn-dark btn-lg rounded-0">Show listings</a>
+                </div>
+            </div>
+            <div class="col-lg-6 px-0">
+                <img src="{% static 'main/img/listings1.jpg' %}" class="img-100vh" alt="">
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

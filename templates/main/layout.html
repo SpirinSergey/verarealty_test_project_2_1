@@ -1,0 +1,210 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    {% block title %}{{ title }}{% endblock %}
+
+    <link rel="stylesheet" href="{% static 'main/css/bootstrap.min.css' %}">
+{#    <link rel="stylesheet" href="{% static 'main/css/bootstrap-icons.css' %}">#}
+    <link rel="stylesheet" href="{% static 'main/css/theme.css' %}">
+    <link rel="stylesheet" href="{% static 'main/css/phone-code.css' %}">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="{% static 'main/js/jquery-1.12.4.js' %}"></script>
+    <script src="{% static 'main/js/jquery-ui.js' %}"></script>
+
+
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow">
+    <div class="container">
+        <a href="{% url 'index' %}" class="logo-svg me-auto me-lg-0">
+            <svg viewBox="0 0 145 62" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M143.735 39.463c-.694 0-1.259.531-1.259 1.185 0 .648.565 1.18 1.259 1.18.699 0 1.26-.532 1.26-1.18.005-.654-.561-1.185-1.26-1.185zm0 2.194c-.595 0-1.077-.454-1.077-1.01 0-.555.482-1.008 1.077-1.008.596 0 1.083.453 1.083 1.009 0 .555-.487 1.009-1.083 1.009zm.502-1.321c0-.22-.182-.405-.452-.405h-.493v1.375h.217v-.624l.576.624h.275l-.541-.575c.221-.005.418-.18.418-.395zm-.723.229v-.444h.261c.142 0 .241.112.241.21 0 .15-.108.239-.266.239h-.236v-.005zm-63.027 9.867h1.19l.881-2.014h5.699l.895 2.014h1.191l-4.93-11.028-4.926 11.028zm2.48-2.94l2.45-5.689 2.436 5.69h-4.886zm13.05.312c0-1.136-.644-1.662-1.993-2.398-1.555-.854-2.638-1.677-2.638-3.223 0-1.589 1.177-2.661 2.746-2.661 1.083 0 1.993.336 2.751 1.014l-.674.75c-.674-.56-1.304-.824-2.057-.824-.861 0-1.648.62-1.648 1.677 0 1.282.88 1.707 2.165 2.413 1.54.854 2.48 1.765 2.48 3.194 0 1.691-1.319 2.866-2.997 2.866-1.225 0-2.106-.37-2.953-1.102l.66-.736c.674.556 1.319.883 2.328.883 1.126 0 1.83-.737 1.83-1.853zm5.59-7.166h-2.45v-.941h5.998v.94h-2.45v9.795h-1.098v-9.794zm9.119-1.131c-3.312 0-5.827 2.384-5.827 5.543 0 3.178 2.545 5.572 5.906 5.572 3.297 0 5.87-2.428 5.87-5.543 0-3.218-2.495-5.572-5.949-5.572zm.074 10.13c-2.609 0-4.744-2.057-4.744-4.587 0-2.677 1.914-4.53 4.68-4.53 2.78 0 4.773 1.897 4.773 4.486.005 3.047-2.352 4.631-4.709 4.631zm11.903-3.924l4.409 4.719h-1.368c-.044-.059-4.822-5.236-5.009-5.412h1.929c1.604 0 2.623-.926 2.623-2.34 0-.853-.802-2.042-2.574-2.042h-2.244v9.794h-1.082v-10.73h3.612c2.007 0 3.454 1.277 3.454 3.056 0 1.604-1.447 2.955-3.154 2.955h-.596zm7.613-6.011h1.083v10.735h-1.083V39.702zm3.184 10.73h1.191l.881-2.014h5.698l.896 2.014h1.19l-4.93-11.028-4.926 11.028zm2.48-2.94l2.451-5.689 2.435 5.69h-4.886zm-120.72-7.79l-4.616 11.027-3.017-6.825-3.011 6.825L0 39.702h1.19l3.505 8.531 2.918-6.693 2.987 6.664 3.469-8.497h1.19v-.005zm-.404 10.73h1.191l.876-2.014h5.703l.896 2.014h1.19l-4.925-11.028-4.93 11.028zm2.48-2.94l2.451-5.689 2.436 5.69h-4.887zm15.108 2.945h-5.718V39.702h1.082v9.794h4.63v.94h.006zm4.96-10.735h-2.918v10.735h2.859c3.597 0 6.092-2.209 6.092-5.44-.005-3.209-2.47-5.295-6.033-5.295zm-.05 9.818h-1.79V40.61h1.934c2.794 0 4.788 1.794 4.788 4.397 0 2.515-1.836 4.514-4.931 4.514zm14.104-10.013c-3.312 0-5.826 2.384-5.826 5.543 0 3.178 2.544 5.572 5.905 5.572 3.297 0 5.876-2.428 5.876-5.543 0-3.218-2.5-5.572-5.955-5.572zm.079 10.13c-2.608 0-4.744-2.057-4.744-4.587 0-2.677 1.914-4.53 4.68-4.53 2.78 0 4.773 1.897 4.773 4.486 0 3.047-2.357 4.631-4.71 4.631zm14.492-6.952c0-.853-.802-2.042-2.574-2.042h-2.244v9.794H60.13V39.702h3.612c2.008 0 3.454 1.277 3.454 3.056 0 1.604-1.446 2.955-3.154 2.955h-.595s4.158 4.455 4.409 4.719h-1.368c-.05-.059-4.823-5.236-5.01-5.412h1.93c1.603.005 2.622-.926 2.622-2.335zm5.157 2.126h3.873v.94h-3.873v4.67h-1.083V39.698h6.132v.94h-5.049v4.174zm12.017-34.33L88.262.453h-2.948V0h6.707v.453H89.36l-5.595 11.13-.561-1.102zM63.834 28.148l5.777-11.251 5.664 11.251 5.758-11.217 5.27 10.837h-.98v.453h6.703v-.453h-1.19L76.88.058l-5.128 10.18.546 1.096 3.061-6.069 3.755 7.717h-5.999l.404.814h5.988l.374.77h-5.983l.398.81h5.98l.176.37-3.676 7.157L65.862.453h1.097V0h-6.702v.453h1.19l7.564 15.303-3.67 7.147L54.42.453h.979V0h-6.703v.453h1.191l13.946 27.695zm12.75-25.32l.483-.956 12.78 25.9h-.926L76.584 2.828zM63.942.452h.926l11.495 23.254-.482.94L63.943.454zm-10.516 0l11.5 23.254-.481.94L52.5.454h.925zm-21.77 58.544c.227-.097.428-.23.606-.4.177-.17.315-.37.418-.6.103-.228.152-.472.152-.736 0-.263-.049-.511-.142-.745a1.755 1.755 0 00-.419-.615 2.033 2.033 0 00-.65-.419 2.209 2.209 0 00-.84-.151H28.64v6.562h.905v-3.067l2.677 3.067h1.162l-2.441-2.75c.246-.005.487-.049.713-.146zm-2.11-.566v-2.247h1.072c.216 0 .404.034.561.102.158.069.29.157.394.254a.977.977 0 01.236.336.95.95 0 01.079.356c0 .351-.114.639-.335.863-.226.224-.541.337-.955.337h-1.053zm5.535 2.604h2.968v.853h-3.873v-6.562h3.7v.853h-2.795v2.077h2.731v.853h-2.73v1.926zm7.677-1.594c.093.2.138.438.138.716 0 .293-.054.556-.163.78a1.78 1.78 0 01-1.082.941 2.433 2.433 0 01-.783.122c-.34 0-.669-.049-.994-.141a2.743 2.743 0 01-.95-.522l.517-.692c.089.078.192.146.305.204.113.059.227.113.35.152.123.044.24.073.369.092.128.02.246.03.359.03.34 0 .615-.074.822-.225.206-.15.315-.38.315-.692a.799.799 0 00-.089-.375 1.189 1.189 0 00-.241-.308 1.834 1.834 0 00-.354-.258 8.53 8.53 0 00-.424-.224c-.236-.122-.467-.239-.693-.36a3.048 3.048 0 01-.61-.42 1.906 1.906 0 01-.438-.566 1.777 1.777 0 01-.163-.794 1.59 1.59 0 01.507-1.209c.167-.156.364-.273.6-.356.236-.083.502-.127.797-.127.335 0 .65.049.95.146.3.098.58.234.842.415l-.492.736a1.996 1.996 0 00-.6-.317 2.47 2.47 0 00-.71-.093c-.26 0-.482.064-.669.19-.187.127-.28.317-.28.566 0 .18.04.332.113.458.074.127.177.24.31.337.133.097.286.19.458.278.172.087.369.18.575.282.188.088.374.19.561.303.188.112.35.243.502.394.133.161.251.337.345.537zm1.151-4.115h.906v6.562h-.906v-6.562zm6.575.96c-.3-.297-.67-.53-1.112-.702a4.164 4.164 0 00-1.506-.258h-1.688v6.562h1.604c.571 0 1.078-.088 1.526-.258.447-.176.826-.41 1.136-.707.31-.298.552-.644.714-1.049.162-.4.246-.828.246-1.287 0-.448-.079-.872-.236-1.267a3.042 3.042 0 00-.684-1.034zm-.182 3.218c-.108.297-.27.56-.497.795a2.486 2.486 0 01-.866.565c-.35.142-.773.215-1.26.215h-.59v-4.944h.762c.399 0 .758.069 1.078.2.32.132.595.312.822.536a2.408 2.408 0 01.713 1.731c0 .302-.054.605-.162.902zm3.1 1.53h2.967v.854h-3.873v-6.562h3.701v.853h-2.795v2.077h2.731v.853h-2.731v1.926zm8.41-5.708h.905v6.562h-.723l-3.474-4.753a.212.212 0 01-.035-.049.364.364 0 01-.034-.058.289.289 0 01-.044-.074c0 .03.004.059.01.083 0 .025 0 .049.004.073.005.025.005.044.005.064v4.719h-.905V55.33h.772l3.43 4.665c.01.02.025.04.04.064.014.024.03.044.039.063.01.025.025.044.034.064a.528.528 0 01-.01-.083.823.823 0 01-.01-.137v-4.64h-.004zm7.209 4.885l.654.556c-.255.355-.605.648-1.058.882-.452.234-.969.351-1.555.351-.403 0-.802-.078-1.19-.239a3.388 3.388 0 01-1.039-.673 3.244 3.244 0 01-.738-1.067 3.457 3.457 0 01-.28-1.414c0-.473.083-.916.246-1.33a3.19 3.19 0 013.036-2.062c.6-.001 1.092.092 1.476.277.384.185.709.434.975.746l-.67.595a2.599 2.599 0 00-.782-.547 2.42 2.42 0 00-.98-.194c-.32 0-.624.058-.91.18a2.391 2.391 0 00-.753.502 2.309 2.309 0 00-.507.78 2.713 2.713 0 00-.187 1.024c0 .424.074.794.217 1.111a2.352 2.352 0 001.309 1.258c.276.107.541.156.792.156.32 0 .655-.068 1-.205.344-.127.659-.36.944-.687zm2.593.824h2.968v.853h-3.873v-6.562h3.7v.853h-2.795v2.077h2.731v.853h-2.73v1.926zm7.677-1.594c.093.2.138.438.138.716 0 .293-.055.556-.163.78a1.78 1.78 0 01-1.082.941A2.434 2.434 0 0177.4 62c-.34 0-.669-.049-.994-.141a2.743 2.743 0 01-.95-.522l.517-.692c.089.078.192.146.305.204.114.059.227.113.35.152.123.044.24.073.369.092.128.02.246.03.359.03.34 0 .615-.074.822-.225.206-.15.315-.38.315-.692a.797.797 0 00-.089-.375 1.189 1.189 0 00-.241-.308 1.834 1.834 0 00-.354-.258 8.574 8.574 0 00-.424-.224c-.236-.122-.467-.239-.693-.36a3.05 3.05 0 01-.61-.42 1.906 1.906 0 01-.439-.566 1.775 1.775 0 01-.162-.794 1.59 1.59 0 01.507-1.209c.167-.156.364-.273.6-.356.237-.083.502-.127.797-.127.335 0 .65.049.95.146.3.098.58.234.842.415l-.492.736a1.996 1.996 0 00-.6-.317 2.47 2.47 0 00-.71-.093c-.26 0-.482.064-.669.19-.187.127-.28.317-.28.566 0 .18.04.332.113.458.074.127.177.24.31.337.133.097.285.19.458.278.172.087.369.18.575.282.188.088.374.19.562.303.187.112.349.243.501.394.133.161.256.337.345.537zm17.73-4.115h.807v6.562h-.905v-4.826-.088c0-.03.004-.059.01-.083 0-.024.004-.049.01-.083-.01.02-.025.04-.035.063a.413.413 0 01-.054.088l-2.077 2.779h-.364l-2.096-2.706a.088.088 0 01-.03-.043.107.107 0 00-.034-.044c-.01-.02-.02-.035-.025-.054 0 .03.005.059.01.083 0 .024 0 .049.005.078.005.03.005.053.005.088v4.753h-.906V55.33h.773l2.495 3.208 2.411-3.213zm2.17 0h.906v6.562h-.906v-6.562zm4.355 0l-2.539 6.562h.964l.798-2.12h2.116l.797 2.12h1.009l-2.559-6.562h-.586zm-.462 3.588l.689-1.843c.004-.01.009-.029.014-.048.005-.02.005-.04.015-.059a.237.237 0 01.02-.063c.005.02.01.039.019.063l.015.059c.005.02.01.039.025.058l.689 1.833h-1.486zm10.201-3.588h.807v6.562h-.906v-4.826-.088a.42.42 0 01.01-.083c0-.024.005-.049.01-.083-.01.02-.025.04-.035.063a.382.382 0 01-.054.088l-2.076 2.779h-.364l-2.097-2.706c-.015-.01-.024-.029-.029-.043a.107.107 0 00-.035-.044c-.01-.02-.019-.035-.024-.054 0 .03.005.059.01.083 0 .024 0 .049.004.078.005.03.005.053.005.088v4.753h-.905V55.33h.772l2.495 3.208 2.412-3.213zm2.17 0h.905v6.562h-.905v-6.562zm-30.776 2.54h1.477v1.462h-1.477v-1.462z">
+                </path>
+            </svg>
+        </a>
+        <button class="navbar-toggler btn-mobile-nav" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item"><a class="nav-link active" href="{% url 'index' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'about' %}">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'developers' %}">Developers</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Amenities</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'inside' %}">Inside</a></li>
+                        <li><a class="dropdown-item" href="{% url 'outside' %}">Outside</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Gallery</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">Views</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="{% url 'day' %}">Day</a></li>
+                        <li><a class="dropdown-item" href="{% url 'night' %}">Night</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'listings' %}">Available units</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<main>
+    {% block content %}
+    {% endblock %}
+</main>
+</body>
+
+    <footer class="border-top">
+
+        <div class="container text-center py-4 footer-contacts">
+            <div class="row align-items-center">
+                <div class="col-lg-6 my-2">
+                    <p class="mb-1 fs-5"><a href="tel:+1 (305) 647-2650" class="text-dark">+1 (305) 647-2650</a></p>
+                    <p class="mb-0 fs-5"><a href="mailto:info@residencewaldorfastoria.com"
+                            class="text-dark">info@residencewaldorfastoria.com</a></p>
+                    <div class="messengers-icons mt-2">
+                        <p class="mb-0">
+                            <a href="#" class="whatsapp"><i class="bi bi-whatsapp"></i></a>
+                            <a href="#" class="telegram"><i class="bi bi-telegram"></i></a>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 my-2">
+                    <p class="mb-1 fs-5">
+                        <a class="text-dark" style="cursor:pointer;" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal1">Write to
+                            us</a>
+                    </p>
+                    <p class="mb-0 fs-5">
+                        <a class="text-dark" style="cursor:pointer;" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal2">Book an
+                            appointment</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Write to us -->
+        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Contact us</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <form method="post" id="contact_form" class="contact-form">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="aGjZcirzgYWBB5TAV1Hk8QCWaWLdQP8jHWB56OJT8TzzMZhcyq5kTqgEr0rA4j0E">
+                            <div class="row g-2">
+                                <div class="form-floating mb-1">
+                                    <div id="div_id_name">
+                                        <input type="text" name="name" id="id_name" class="form-control" placeholder="Your name" required>
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-1">
+                                    <div id="div_id_phone">
+                                        <input type="text" name="phone" id="id_phone" class="form-control phone" placeholder="Your Phone" required>
+                                    </div>
+                                </div>
+                                <div class="form-floating">
+                                    <div id="div_id_email">
+                                        <input type="text" id="id_email" name="email" class="form-control" placeholder="Your email" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <button name="contact_form_btn" type="submit" class="btn btn-dark btn-lg rounded-0 px-5 mt-4">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal Book an appointment -->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content rounded-0">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Book an appointment</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body text-center">
+                        <form method="post" id="bookpoint_form" class="contact-form">
+                            <input type="hidden" name="csrfmiddlewaretoken" value="aGjZcirzgYWBB5TAV1Hk8QCWaWLdQP8jHWB56OJT8TzzMZhcyq5kTqgEr0rA4j0E">
+                            <div class="row g-2">
+                                <div class="form-floating mb-1">
+                                    <div id="div_id_name">
+                                        <input type="text" name="name" id="id_name" class="form-control" placeholder="Your name" required>
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-1">
+                                    <div id="div_id_phone">
+                                        <input type="text" id="id_phone" name="phone" class="form-control rounded-0 phone_book"
+                                            placeholder="Your phone" required>
+                                    </div>
+                                </div>
+                                <div class="form-floating mb-1">
+                                    <div id="div_id_email">
+                                        <input type="text" id="id_email" name="email" class="form-control rounded-0"
+                                            placeholder="Your email" required>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row">
+                                        <div class="col mb-2">
+                                            <div id="div_id_date">
+                                                <input type="datetime-local" id="id_date" name="date" class="form-control"
+                                                placeholder="Select date and time" required>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="col-sm-6 mb-2">
+                                            <div id="div_id_time">
+                                                <select class="form-select rounded-0" name="time" id="id_time" placeholder="Select time">
+                                                    <option selected>Select time</option>
+                                                    <option value="09:00">09:00</option>
+                                                    <option value="10:00">10:00</option>
+                                                    <option value="11:00">11:00</option>
+                                                    <option value="12:00">12:00</option>
+                                                    <option value="13:00">13:00</option>
+                                                    <option value="14:00">14:00</option>
+                                                    <option value="15:00">15:00</option>
+                                                    <option value="16:00">16:00</option>
+                                                    <option value="17:00">17:00</option>
+                                                    <option value="18:00">18:00</option>
+                                                    <option value="19:00">19:00</option>
+                                                    <option value="20:00">20:00</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                            <button name="bookpoint_form_btn" type="submit" class="btn btn-dark btn-lg rounded-0 px-5 mt-4">Send</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-info">
+            <div class="container text-center">
+                <p class="mb-3">© 2021 Residences, INC</p>
+            </div>
+        </div>
+    </footer>
+
+</html>
