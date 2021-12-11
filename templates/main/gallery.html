@@ -17,13 +17,17 @@
 
             <div class="col-md-4 mb-4">
                 <figure class="media media-image equal-md-1-1"
-                    data-bp='{"imgSrc": "{% static 'main/img/gallery/image_None_aFZxRMD' %}" , "parentGalleryClass": "gallery-1" }'>
+                    data-bp='{"imgSrc": "{{ i.gallery_img.url }}" , "parentGalleryClass": "gallery-1" }'>
                     <span style="background-image: url('{{ i.gallery_img.url }}')">
                     </span>
+                    <a href="{{ i.gallery_img.url }}" class="highslide" onclick="return hs.expand(this)"></a>
                 </figure>
             </div>
 
+
     {% endfor %}
+
+
 
             </div>
         </div>
