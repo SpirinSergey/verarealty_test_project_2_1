@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render
 from .models import Gallery
 from .models import Listing
+from django.db.models import Q
 from django.http import HttpResponse
 
 
@@ -39,8 +40,14 @@ def night(request):
 
 
 def listings(request):
-    listing_object = Listing.objects.all()
-    return render(request, 'main/listings.html', context={'listing_object': listing_object})
+    unit_type = request.GET.get('unit_type')
+    view = request.GET.get('view')
+    if unit_type or view:
+        listing_object = Listing.objects.filter(Q(UNIT_TYPE__icontains=unit_type) & Q(VIEW__icontains=view))
+        return render(request, 'main/listings.html', context={'listing_object': listing_object})
+    else:
+        listing_object = Listing.objects.all()
+        return render(request, 'main/listings.html', context={'listing_object': listing_object})
 
 
 def contact(request):

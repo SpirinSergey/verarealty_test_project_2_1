@@ -58,12 +58,15 @@
 
                       </select>
                 </div>
-                <div class="col-lg-4">
+                <div class="col-lg-2 mb-3">
                     <button type="submit" name="search_btn" class="btn btn-dark btn-list-search w-100"
                         style="margin-right: 5px;height: 48px;">Search</button>
                     <!-- <button class="btn btn-outline-dark btn-list-search px-5" type="button"
                         data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
                         aria-controls="offcanvasRight">Building</button> -->
+                </div>
+                <div class="col-lg-2">
+                    <a href="{% url 'listings' %}" class="btn btn-outline-dark btn-list-search w-100">Reset search</a>
                 </div>
             </div>
         </form>
@@ -74,9 +77,9 @@
                 <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                     aria-label="Close"></button>
             </div>
-            <div class="offcanvas-body">
-                <img src="/static/img/listings_obj.png" width="100%" height="100%" alt="">
-            </div>
+{#            <div class="offcanvas-body">#}
+{#                <img src="{% static 'main/img/bookmark.png' %}" width="100%" height="100%" alt="">#}
+{#            </div>#}
         </div>
 
         <!-- listings -->
@@ -107,6 +110,7 @@
                         <td>{{ i.VIEW }}</td>
                         <td>{{ i.SQ_FT }}</td>
                         <td>${{ i.PRICE }}</td>
+                        <td><img src="{% static 'main/img/bookmark.png' %}" width="35px" height="30px" alt=""></td>
                         <td>
 
                             <a class="text-dark fs-5">
